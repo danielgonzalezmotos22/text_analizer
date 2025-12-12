@@ -53,8 +53,13 @@ def filter_by_word_length(text,l):
 
 def count_by_lenght(text, l):
     # Dani Gonzalez
-    """Return a dict with lengths and quantities of words with this lenghts"""
-    pass
+    palabras = text.split()
+    diccionario ={}
+    for p in palabras:
+        longitud = len(p)
+        if l is None or longitud == 1:
+            diccionario[longitud] = diccionario.get(longitud, 0) + 1
+    return diccionario
 
 
 
